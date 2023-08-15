@@ -1,8 +1,8 @@
 import { Component } from "react";
 import { ClassScoreBoard } from "./ClassScoreBoard";
-import { ClassGameBoard, allFishNames } from "./ClassGameBoard";
+import { ClassGameBoard } from "./ClassGameBoard";
 import { ClassFinalScore } from "./ClassFinalScore";
-import { initialFishes } from "../../constants";
+import { initialFishes, allFishNames } from "../../constants";
 
 export class ClassApp extends Component {
   constructor(props) {
