@@ -24,13 +24,7 @@ export class ClassGameBoard extends Component {
             type="text"
             name="fish-guess"
           />
-          {/* Only enable submit as long as array of fish names includes input. Or, if exactly-like-model requirement is strict, allow for non-answers */}
-          {/* Clear input when moving to next question */}
-          <input
-            disabled={!allFishNames.includes(currentInput)}
-            onClick={handleSubmission}
-            type="submit"
-          />
+          <input onClick={handleSubmission} type="submit" />
         </form>
       </div>
     );
