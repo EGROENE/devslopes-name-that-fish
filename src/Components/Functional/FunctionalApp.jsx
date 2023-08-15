@@ -2,7 +2,7 @@ import { FunctionalGameBoard } from "./FunctionalGameBoard";
 import { FunctionalScoreBoard } from "./FunctionalScoreBoard";
 import { FunctionalFinalScore } from "./FunctionalFinalScore";
 import { useState } from "react";
-import { initialFishes } from "../../constants.js";
+import { allFishNames, initialFishes } from "../../constants.js";
 
 export function FunctionalApp() {
   let [currentIndex, nextIndex] = useState(0);
@@ -20,7 +20,7 @@ export function FunctionalApp() {
   const handleSubmission = (e) => {
     e.preventDefault();
 
-    if (initialFishes[currentIndex].name === currentInput) {
+    if (allFishNames[currentIndex] === currentInput) {
       setCorrectCount(correctCount + 1);
     } else {
       setIncorrectCount(incorrectCount + 1);
