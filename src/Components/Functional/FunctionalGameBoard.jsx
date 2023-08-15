@@ -9,8 +9,6 @@ export function FunctionalGameBoard({
 }) {
   const currentFish = initialFishes[currentIndex];
 
-  const allFishNames = initialFishes.map((fish) => fish.name);
-
   return (
     <div id="game-board">
       <div id="fish-container">
@@ -24,11 +22,7 @@ export function FunctionalGameBoard({
           type="text"
           name="fish-guess"
         />
-        <input
-          disabled={!allFishNames.includes(currentInput)}
-          onClick={handleSubmission}
-          type="submit"
-        />
+        <input onClick={handleSubmission} type="submit" />
       </form>
     </div>
   );
