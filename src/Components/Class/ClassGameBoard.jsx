@@ -2,8 +2,6 @@ import { Component } from "react";
 import "./styles/game-board.css";
 import { initialFishes } from "../../constants";
 
-export const allFishNames = initialFishes.map((fish) => fish.name);
-
 export class ClassGameBoard extends Component {
   render() {
     const { handleSubmission, currentIndex, currentInput, handleInput } =
