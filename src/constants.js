@@ -1,5 +1,6 @@
 import { Images } from "./assets/Images";
 
+// Must be in order of trout, salmon, tuna, shark
 export const initialFishes = [
   {
     name: "trout",
@@ -18,3 +19,5 @@ export const initialFishes = [
     url: Images.shark,
   },
 ];
+
+export const allFishNames = initialFishes.map((fish) => fish.name);
