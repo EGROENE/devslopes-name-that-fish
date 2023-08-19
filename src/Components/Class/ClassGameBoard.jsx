@@ -1,13 +1,22 @@
 import { Component } from "react";
 import "./styles/game-board.css";
-import { initialFishes } from "../../constants";
 
 export class ClassGameBoard extends Component {
-  render() {
-    const { handleSubmission, currentIndex, currentInput, handleInput } =
-      this.props;
+  constructor() {
+    super();
+    this.state = {
+      userInput: "",
+    };
+  }
 
-    const currentFish = initialFishes[currentIndex];
+  handleSubmission = (e) => {
+    e.preventDefault();
+    this.props.handleAnswer(this.state.userInput);
+    this.setState({ userInput: "" });
+  };
+
+  render() {
+    const { currentFish } = this.props;
 
     return (
       <div id="game-board">
@@ -17,12 +26,12 @@ export class ClassGameBoard extends Component {
         <form id="fish-guess-form">
           <label htmlFor="fish-guess">What kind of fish is this?</label>
           <input
-            value={currentInput}
-            onChange={handleInput}
+            value={this.state.userInput}
+            onChange={(e) => this.setState({ userInput: e.target.value })}
             type="text"
             name="fish-guess"
           />
-          <input onClick={handleSubmission} type="submit" />
+          <input onClick={this.handleSubmission} type="submit" />
         </form>
       </div>
     );

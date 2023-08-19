@@ -9,8 +9,8 @@ export class ClassScoreBoard extends Component {
         <div>Incorrect 🔻: {incorrectCount}</div>
         <div id="choices-left">
           {answersLeft.map((answer) => (
-            <div key={answer} className="choice">
-              {answer}
+            <div key={answer.name} className="choice">
+              {answer.name}
             </div>
           ))}
         </div>
